@@ -18,24 +18,27 @@ The aim of this exercise is to demonstrate your problem solving and understandin
 - Please do not use external libraries (except for a testing library)
 - You may of course use any resources you like to assist you with specific techniques, syntax etc - but please do not just copy code.
 - Please don't share this exercise with anyone else :)
-- We've written an initial implementation and associated test in PyTest, which is our testing library of choice. You may use a different library if you wish.
+- We've written an initial implementation and associated test in [pytest](https://docs.pytest.org), which is our testing library of choice. You may use a different library if you wish.
 
 ### Example inputs and outputs
 
-| Expected        |     Actual      |                                                                 Result |
-| --------------- | :-------------: | ---------------------------------------------------------------------: |
-| "abc"           |      "abc"      |                                                             _No error_ |
-| "abcef"         |      "abc"      |           Throws error with message 'Expected "abcef" but found "abc"' |
-| 1               |        1        |                                                             _No error_ |
-| 1               |        2        |                     Throws error with message 'Expected 1 but found 2' |
-| 1               |       '1'       | Throws error with message 'Expected type number but found type string' |
-| ["a", "b", "c"] | ["a", "b", "c"] |                                                             _No error_ |
-| ["a", "b"]      | ["a", "b", "c"] |        Throws error with message 'Expected array length 2 but found 3' |
-| ["a", "b"]      | ["a", "d"]      |                 Throws error with message 'Expected "b" but found "d"' |
+| Expected        |     Actual      |                                                           Result |
+| --------------- | :-------------: | ---------------------------------------------------------------: |
+| "abc"           |      "abc"      |                                                       _No error_ |
+| "abcef"         |      "abc"      |     Raises error with message 'Expected "abcef" but found "abc"' |
+| 1               |        1        |                                                       _No error_ |
+| 1               |        2        |               Raises error with message 'Expected 1 but found 2' |
+| 1               |       '1'       | Raises error with message 'Expected type int but found type str' |
+| ["a", "b", "c"] | ["a", "b", "c"] |                                                       _No error_ |
+| ["a", "b"]      | ["a", "b", "c"] |   Raises error with message 'Expected list length 2 but found 3' |
+| ["a", "b"]      | ["a", "d"]      |           Raises error with message 'Expected "b" but found "d"' |
 
-### Instructions for running the tests
+### Instructions for setup and running the tests
 
-``pipenv install --dev``
+```
+pipenv install --dev
+pipenv run pytest -vvs
+```
 
 ## How to prepare for the pairing exercise
 
@@ -48,7 +51,7 @@ The aim of this exercise is to demonstrate your problem solving and understandin
 - We allow an hour for the session. Usually that's about 5 minutes of introductions, 45 minutes of coding, and 10 minutes for questions at the end.
 - You'll share your screen with us. You'll talk us through the code you've written so far. Then we'll work together to add new functionality.
 - We usually start by implementing object comparison. If time allows, we'll move on to comparing more complex objects.
-- We will insist on practising test driven development with you.
+- We will insist on practising test driven development (TDD) with you.
 - As well as assessing your Python and TDD skills, we'll be looking for excellent communication skills, initiative, willingness to learn, and ability to cope under pressure.
 - You can ask us questions at any time during the test.
 - We know that it's difficult to write your best code while being watched by two people you don't know. We don't expect perfection, and will do our best to make the experience as comfortable and enjoyable for you as we can. Please let us know if you'd like us to make any adjustments.
