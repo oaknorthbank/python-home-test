@@ -3,4 +3,4 @@ repository:
   # See https://github.com/apps/settings for all available settings.
   name: python-home-test
   description: null
-  topics: "squad::Core-Finance, mission::Pipes, product::Pipes, environment::Sandbox"
+  topics: squad-core-finance, mission-pipes, product-pipes, environment-sandbox
